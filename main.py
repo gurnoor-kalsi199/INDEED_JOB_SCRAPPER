@@ -32,7 +32,7 @@ os.makedirs("data", exist_ok=True)
 
 try:
     page = 1
-    for i in range(MAX_PAGES):
+    while driver.find_element(By.CSS_SELECTOR, 'a[data-testid="pagination-page-next"]'):
         wait.until(
             EC.visibility_of_element_located((By.ID, "mosaic-zone-ssrSerpModals"))
         )

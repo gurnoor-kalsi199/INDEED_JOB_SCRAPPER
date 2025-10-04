@@ -1,6 +1,5 @@
 import os
 from bs4 import BeautifulSoup
-from main import MAX_PAGES
 import re
 from urllib.parse import urljoin
 import pandas as pd
@@ -36,8 +35,21 @@ def formatted_salary(salary_str):
     else:
         return salary
 
+#Count subdirectories function
+def count_subdirectories(directory_path):
+    if not os.path.isdir(directory_path):
+        print(f"Error: '{directory_path}' is not a valid directory.")
+        return 0
+
+    subdirectory_count = 0
+    for entry_name in os.listdir(directory_path):
+        full_path = os.path.join(directory_path, entry_name)
+        if os.path.isdir(full_path):
+            subdirectory_count += 1
+    return subdirectory_count
+
 #Loop through the fucking pages man
-for page in range(1, MAX_PAGES + 1):
+for page in range(1, count_subdirectories("data")+1):
 
     #Loop through the html's
     for job in os.listdir(f"data/page-{page}"):
