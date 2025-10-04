@@ -1,6 +1,7 @@
 import os
 from bs4 import BeautifulSoup
 import re
+import main
 from urllib.parse import urljoin
 import pandas as pd
 import pyshorteners
