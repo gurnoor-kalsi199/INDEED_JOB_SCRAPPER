@@ -1,0 +1,10 @@
+#main.py
+
+
+#while this condition is true, run this stuff
+
+i = 1
+
+while (i <= 10):
+    print(i)
+    i += 1
