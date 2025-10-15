@@ -4,6 +4,7 @@ import re
 from urllib.parse import urljoin
 import pandas as pd
 import pyshorteners
+import main
 
 JOB_TITLE = []
 COMPANY_NAME = []
